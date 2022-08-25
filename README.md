@@ -1,6 +1,14 @@
 # ec2-fishook-pipeline
 A package to get an image and an annotation from a Flutter app, add to the dataset, retrain the model and send the model with the annotation file back.
 
+### Supporting resources :
+
+Add these files to your repository's root directory as given in the folder linked to by the following URL -
+
+```https://drive.google.com/drive/folders/1JNZan6HIYXizvNvj-MMpcC5fmkegDfAg?usp=sharing```
+
+If the folder is empty, request SR42-dev for the contents.
+
 ### Workflow :
 
 0. loop - continually scan for files in firebase bucket

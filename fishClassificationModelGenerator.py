@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf 
 
 # data loading
-image_dir = Path('./datasets/og-dataset')
+image_dir = Path('./datasets/og-dataset') ## change the path to ./datasets/dataset to use true pipeline functionality
 
 # get filepaths and labels
 filepaths1 = list(image_dir.glob(r'**/*.png'))
