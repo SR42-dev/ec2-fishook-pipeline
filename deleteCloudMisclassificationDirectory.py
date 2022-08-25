@@ -1,6 +1,7 @@
 # a script to update the misclassifications directory with the latest misclassifications on firebase
 
 # import libraries
+from ast import Delete
 import pyrebase
 
 config = {
@@ -33,4 +34,4 @@ listOfMisclassifiedFiles.pop(0)
 for file in listOfMisclassifiedFiles :
     print('Cloud path : ', cloudPath + file[19:])
     print('Local path : ', localPath + '/' + file[19:])
-    # storage.child(cloudPath + file[19:]).download(file) # fucking dogshit error - AttributeError: 'NoneType' object has no attribute 'download_to_filename'
+    storage.child(cloudPath + file[19:]).delete(cloudPath + file[19:])
