@@ -1,5 +1,5 @@
 python getMisclassifications.py
-python deleteCloudMissclassificationDirectory.py
+python deleteCloudMisclassificationDirectory.py
 python loadIntoDataset.py
 python fishDetectionModelGenerator.py
 python fishClassificationModelGenerator.py
