@@ -28,7 +28,7 @@ Once the previous commands are executed, run this script whenever the server has
 
 To run the pipeline periodically every 20 minutes ...
 
-```watch -n 1200 ./run```
+```./server```
 
 Keyboard Interrupt for watch : 
 

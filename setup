@@ -12,3 +12,4 @@ sudo pip3 install pytest-shutil
 sudo pip3 install shutils
 
 chmod 777 run
+chmod 777 server
