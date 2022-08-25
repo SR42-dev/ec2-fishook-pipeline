@@ -10,6 +10,28 @@ A package to get an image and an annotation from a Flutter app, add to the datas
 4. retrain the fishnofish and classification models with new data
 5. push model directory content to firebase
 
+### Annotation mappings :
+
+The first character of every file uploaded to the /misclassifications bucket on firebase must be any number from 0 to 8 as per the following mapping ...
+
+'0' : 'Gilt-Head Bream'
+
+'1' : 'Black Sea Sprat'
+
+'2' : 'Trout'
+
+'3' : 'Shrimp'
+
+'4' : 'Red Sea Bream'
+
+'5' : 'Striped Red Mullet'
+
+'6' : 'Red Mullet'
+
+'7' : 'Sea Bass'
+
+'8' : 'Hourse Mackerel'
+
 ### Setup instructions :
 
 Assuming the cloud server repository is public, execute the following commands in the linux terminal once :

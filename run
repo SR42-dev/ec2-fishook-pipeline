@@ -1,6 +1,6 @@
 python getMisclassifications.py
 python deleteCloudMissclassificationDirectory.py
 python loadIntoDataset.py
-python fishnofishModelGenerator.py
+python fishDetectionModelGenerator.py
 python fishClassificationModelGenerator.py
 python putModels.py
