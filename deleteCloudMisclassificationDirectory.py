@@ -1,7 +1,6 @@
-# a script to update the misclassifications directory with the latest misclassifications on firebase
+# a script to udelete all records in the misclassifications directory
 
 # import libraries
-from ast import Delete
 import pyrebase
 
 config = {
@@ -21,7 +20,6 @@ storage = firebase.storage()
 
 cloudPath = "misclassifications/"
 localPath = "./misclassifications"
-absoluteLocalPath = '/home/sr42/Projects/ec2-fishook-pipeline/misclassifications' # hack, replace with function to get absolute path later
 
 misclassifiedFiles = storage.child(cloudPath).list_files()
 listOfMisclassifiedFiles = []
@@ -35,3 +33,5 @@ for file in listOfMisclassifiedFiles :
     print('Cloud path : ', cloudPath + file[19:])
     print('Local path : ', localPath + '/' + file[19:])
     storage.child(cloudPath + file[19:]).delete(cloudPath + file[19:])
+
+    

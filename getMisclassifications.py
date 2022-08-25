@@ -1,4 +1,5 @@
 # a script to update the misclassifications directory with the latest misclassifications on firebase
+# download not working at the moment
 
 # import libraries
 import pyrebase
