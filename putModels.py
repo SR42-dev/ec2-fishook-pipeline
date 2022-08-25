@@ -2,7 +2,7 @@
 
 # import libraries
 import os
-import pyrebase
+from firebase_admin import credentials, initialize_app, storage
 
 config = {
     "apiKey": "AIzaSyC8_9Jcl4qtkSTRwBc1i7p94S9SySo3ssM",
@@ -16,11 +16,12 @@ config = {
     "serviceAccount": "./credentials/firebase-private-key.json"
 }
 
-firebase = pyrebase.initialize_app(config)
-storage = firebase.storage()
+cred = credentials.Certificate("./credentials/firebase-private-key.json")
+initialize_app(cred, {'storageBucket': 'sih-clapforkrishna-c1752.appspot.com'})
 
-cloudPath = "model/"
-localPath = "./model/" 
+bucket = storage.bucket()
+localPath = 'models'
 
 for file in os.listdir(localPath):
-    storage.child(cloudPath + file).put(localPath + file)
+    blob = bucket.blob(localPath+'/'+file)
+    blob.upload_from_filename(localPath+'/'+file)

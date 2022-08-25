@@ -32,7 +32,7 @@ image_df = image_df[image_df['Label'].apply(lambda x: x[-2:] != 'GT')]
 unique_list = image_df['Label'].unique().tolist()
 classes = len(unique_list)
 
-with open('/home/sr42/Projects/fish-classifier-tensorflow/model/fishDetection.txt', 'w') as filehandle:
+with open('/home/sr42/Projects/fish-classifier-tensorflow/models/fishDetection.txt', 'w') as filehandle:
     for listitem in unique_list:
         filehandle.write('%s\n' % listitem)
 
@@ -141,5 +141,5 @@ history = model.fit(
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
-with open('/home/sr42/Projects/fish-classifier-tensorflow/model/fishDetection.tflite', 'wb') as f:
+with open('/home/sr42/Projects/fish-classifier-tensorflow/models/fishDetection.tflite', 'wb') as f:
   f.write(tflite_model)

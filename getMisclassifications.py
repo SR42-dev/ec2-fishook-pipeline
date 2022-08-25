@@ -2,7 +2,9 @@
 # download not working at the moment
 
 # import libraries
-import pyrebase
+import os
+import firebase
+from firebase_admin import credentials, initialize_app, storage
 
 config = {
     "apiKey": "AIzaSyC8_9Jcl4qtkSTRwBc1i7p94S9SySo3ssM",
@@ -16,22 +18,24 @@ config = {
     "serviceAccount": "./credentials/firebase-private-key.json"
 }
 
-firebase = pyrebase.initialize_app(config)
-storage = firebase.storage()
+cred = credentials.Certificate("./credentials/firebase-private-key.json")
+initialize_app(cred, {'storageBucket': 'sih-clapforkrishna-c1752.appspot.com'})
 
-cloudPath = "misclassifications/"
-localPath = "./misclassifications"
-absoluteLocalPath = '/home/sr42/Projects/ec2-fishook-pipeline/misclassifications' # hack, replace with function to get absolute path later
+bucket = storage.bucket()
+localPath = 'misclassifications'
 
-misclassifiedFiles = storage.child(cloudPath).list_files()
-listOfMisclassifiedFiles = []
-for file in misclassifiedFiles :
-    if file.name.find('misclassifications') != -1 :
-        listOfMisclassifiedFiles.append(file.name)
+all_blob = bucket.list_blobs()
 
-listOfMisclassifiedFiles.pop(0)
+filePaths = []
+for file in all_blob:
+    if file.name[:18] == 'misclassifications':
+        filePaths.append(file.name)
 
-for file in listOfMisclassifiedFiles :
-    print('Cloud path : ', cloudPath + file[19:])
-    print('Local path : ', localPath + '/' + file[19:])
-    # storage.child(cloudPath + file[19:]).download(file) # fucking dogshit error - AttributeError: 'NoneType' object has no attribute 'download_to_filename'
+filePaths.pop(0)
+print(filePaths)
+
+for path in filePaths:
+    blob = bucket.blob(path)
+    blob.download_to_filename(path)
+    
+
