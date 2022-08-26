@@ -56,7 +56,7 @@ Once the previous commands are executed, run this script whenever the server has
 
 ```./run``` 
 
-To run the pipeline periodically every 20 minutes ...
+To run the pipeline in an infinite loop ...
 
 ```./server```
 
