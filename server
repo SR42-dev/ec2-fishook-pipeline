@@ -1,1 +1,6 @@
-watch -n 1200 ./run
+while :
+do
+    echo "Press [CTRL+C] to exit this loop..."
+    ./run
+    sleep 2
+done
