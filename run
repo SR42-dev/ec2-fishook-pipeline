@@ -1,3 +1,5 @@
+# a script to run the included python scripts in the correct order
+
 python getMisclassifications.py
 python deleteCloudMisclassificationDirectory.py
 python loadIntoDataset.py

@@ -1,0 +1,4 @@
+# execute chmod 777 absolute/path/to/instance.init prior to running this script
+
+ssh -i "absolute/path/to/rsa/keypair.pem" user@dns
+scp -i absolute/path/to/rsa/keypair.pem -r absolute/path/to/ec2-fishook-pipeline user@dns:/home/user/

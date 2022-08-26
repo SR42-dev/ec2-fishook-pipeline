@@ -42,6 +42,8 @@ The first character of every file uploaded to the /misclassifications bucket on 
 
 ### Setup instructions :
 
+Point to note - This package is only compatible with Ubuntu 20.04 and is not supported as of 26th-August-2022.
+
 Assuming the cloud server repository is public, execute the following commands in the linux terminal once :
 
 ```git clone https://github.com/SIH-ClapForKrishna/ec2-fishook-pipeline.git```
@@ -51,6 +53,8 @@ Assuming the cloud server repository is public, execute the following commands i
 ```chmod 777 setup```
 
 ```./setup```
+
+Alternatively, if you are conversant in ssh, scp & linux kernal programming, feel free to modify and use the included instance-init executable to automate the process of moving this pipeline package to any cloud instance of your choosing.
 
 Once the previous commands are executed, run this script whenever the server has to carry out the aforementioned workflow. Feel free to call this using any other existing script :
 

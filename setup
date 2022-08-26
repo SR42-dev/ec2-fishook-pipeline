@@ -1,6 +1,8 @@
-sudo apt install python-is-python3
+# a script to install dependencies and set the appropriate permissions on the remote machine
 
+sudo apt install python-is-python3
 sudo apt install python3-pip
+
 sudo pip3 install pyrebase
 sudo pip3 install google-cloud-storage
 sudo pip3 install firebase
@@ -14,5 +16,5 @@ sudo pip3 install tensorflow
 sudo pip3 install pytest-shutil
 sudo pip3 install shutils
 
-chmod 777 run
-chmod 777 server
+sudo chmod 777 run
+sudo chmod 777 server

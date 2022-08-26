@@ -1,3 +1,5 @@
+# a script to infinitely check the firebase bucket for misclassification data, retrain the model and push the trained weights and annotations to another bucket to be recieved by the flutter app
+
 while :
 do
     echo "Press [CTRL+C] to exit this loop..."
